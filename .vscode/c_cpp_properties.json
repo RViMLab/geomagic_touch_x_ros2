@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/ros/humble/include/**",
+                "/opt/ros/foxy/include/**",
                 "/opt/OpenHaptics/Developer/3.4-0/libsrc/include/**"
             ],
             "defines": [],

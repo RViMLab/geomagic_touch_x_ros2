@@ -75,6 +75,11 @@ install(TARGETS geomagic_touch_x_driver geomagic_touch_x_component
         RUNTIME DESTINATION bin
 )
 
+install(PROGRAMS
+  scripts/demo_impedance_control.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

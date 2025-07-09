@@ -9,6 +9,10 @@ void Device::open(const std::string &device_name) {
   }
   // Initialize haptic device
   hHD_ptr_ = std::make_unique<HHD>(hdInitDevice(device_name.c_str()));
+  HDErrorInfo error;
+  if (HD_DEVICE_ERROR(error = hdGetError())) {
+    throw std::runtime_error("Failed to initialize haptic device.");
+  }
   // Enable force output, i.e. all motors are turned on.
   if (!hdIsEnabled(HD_FORCE_OUTPUT)) {
     hdEnable(HD_FORCE_OUTPUT);

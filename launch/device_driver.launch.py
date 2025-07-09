@@ -11,12 +11,7 @@ def generate_launch_description() -> LaunchDescription:
     ld = LaunchDescription()
     # launch arguments
     ld.add_action(DeclareLaunchArgument(name="device_name", default_value="left"))
-    ld.add_action(
-        DeclareLaunchArgument(
-            name="update_rate",
-            default_value="200",
-        )
-    )
+    ld.add_action(DeclareLaunchArgument(name="update_rate", default_value="200"))
     ld.add_action(DeclareLaunchArgument(name="frame_id", default_value="touch_x_base"))
     ld.add_action(
         DeclareLaunchArgument(name="child_frame_id", default_value="touch_x_ee")

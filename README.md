@@ -1,11 +1,12 @@
-# Geomagic Touch X ROS Driver
+# Geomagic Touch X ROS 2 Driver
 
 # Introduction
 Node for using the Geomagic Touch X connected via ethernet with the Robot Operating System 2 (ROS 2).
-Currently tested and working with ROS 2 Humble (`Ubuntu 22.04`).
+Currently tested and working with ROS 2 Foxy (`Ubuntu 20.04`).
 
 # Install
-This assumes you have installed the driver software provided by 3D Systems for the device in the default location.
+> [!NOTE]
+> Please install the device drivers, see e.g. [install-3ds-touch-drivers-2022.sh](https://github.com/jhu-cisst-external/3ds-touch-openhaptics/tree/main) and the SDK, see e.g. [install-3ds-openhaptics-3.4.sh](https://github.com/jhu-cisst-external/3ds-touch-openhaptics/tree/main).
 
 1. Clone this driver into your workspace, install dependencies, and build:
 ```shell
@@ -20,15 +21,12 @@ colcon build --symlink-install
   * IPv4 Method: "Link-Local Only"
   * IPv6 Method: "Link-Local Only"
 
-# Usage
-This assumes you have installed the driver software provided by 3D Systems for the device in the default location.
-
 ## Pair device
 Run this each time you use the device.
 
 1. Plug in the device to your computer via Ethernet.
 2. Ensure the correct wired connection is selected.
-3. `ros2 launch geomegic_touch_x pair.launch.py`
+3. `ros2 launch geomegic_touch_x setup.launch.py`
 4. Click "Rescan for Devices", this should ensure we can find the device.
 5. Click "Pairing", and just after click the pairing button on the device.
 6. The device should successfully pair.
@@ -50,7 +48,7 @@ If this doesn't work, then see the official documentation provided with your dev
 
 # `geomagic_touch_x_node`
 
-This is the main ROS node you need to launch to set/get the state of the haptic device.
+This is the main ROS 2 component you need to launch to set/get the state of the haptic device.
 
 ## Parameters
 * `update_rate` (int): rate to run driver at in Hz
