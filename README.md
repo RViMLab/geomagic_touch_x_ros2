@@ -26,7 +26,7 @@ Run this each time you use the device.
 
 1. Plug in the device to your computer via Ethernet.
 2. Ensure the correct wired connection is selected.
-3. `ros2 launch geomegic_touch_x setup.launch.py`
+3. `ros2 launch geomagic_touch_x setup.launch.py`
 4. Click "Rescan for Devices", this should ensure we can find the device.
 5. Click "Pairing", and just after click the pairing button on the device.
 6. The device should successfully pair.
@@ -37,7 +37,7 @@ If this doesn't work, then see the official documentation provided with your dev
 ## Calibrate the device
 Run this each time you use the device after the device has been paired (see previous section).
 
-1. `ros2 launch geomegic_touch_x calibrate.launch.py`
+1. `ros2 launch geomagic_touch_x calibrate.launch.py`
 2. Click the "Select" tab.
 3. Then click the next button (right arrow) at the bottom of the dialog box.
 4. Move the stylus in each axis (X, Y, Z) to properly calibrate the device.
